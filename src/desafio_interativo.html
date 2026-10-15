@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio JavaScript Interativo</title>
+<link rel="stylesheet" href="css/desafio_interativo.css">
+</head>
+<body>
+<main>
+<header><h1>Desafio JavaScript</h1><p>Três exercícios interativos. Execute o servidor local conforme as instruções do README para testar.</p></header>
+<nav class="tabs" aria-label="Exercícios">
+<button class="tab active" data-tab="comissoes">1. Comissões</button>
+<button class="tab" data-tab="estoque">2. Estoque</button>
+<button class="tab" data-tab="juros">3. Juros por atraso</button>
+</nav>
+<section id="comissoes" class="panel active">
+<h2>Calcular comissão de uma venda</h2>
+<p class="muted">Regra: abaixo de R$ 100,00 = 0%; de R$ 100,00 até menos de R$ 500,00 = 1%; a partir de R$ 500,00 = 5%.</p>
+<div class="grid">
+<div class="field"><label for="vendedor">Vendedor</label><input id="vendedor" placeholder="Ex.: João Silva"></div>
+<div class="field"><label for="valorVenda">Valor da venda (R$)</label><input id="valorVenda" type="number" min="0" step="0.01" placeholder="Ex.: 1200,50"></div>
+</div>
+<div class="actions"><button class="primary" id="calcularComissao">Calcular comissão</button><button class="secondary" id="mostrarVendas">Carregar vendas do desafio</button></div>
+<div id="resultadoComissao" aria-live="polite"></div><div id="tabelaVendas"></div>
+</section>
+<section id="estoque" class="panel">
+<h2>Movimentação de estoque</h2>
+<p class="muted">Selecione o produto e registre uma entrada ou saída. O estoque não pode ficar negativo.</p>
+<div class="grid">
+<div class="field"><label for="produto">Produto</label><select id="produto">
+<option value="101">101 — Caneta Azul</option><option value="102">102 — Caderno Universitário</option><option value="103">103 — Borracha Branca</option><option value="104">104 — Lápis Preto HB</option><option value="105">105 — Marcador de Texto Amarelo</option>
+</select></div>
+<div class="field"><label for="tipoMovimento">Tipo de movimentação</label><select id="tipoMovimento"><option value="entrada">Entrada</option><option value="saida">Saída</option></select></div>
+<div class="field"><label for="quantidade">Quantidade</label><input id="quantidade" type="number" min="1" step="1" placeholder="Ex.: 10"></div>
+<div class="field"><label for="descricaoMovimento">Descrição</label><input id="descricaoMovimento" placeholder="Ex.: Compra de mercadoria"></div>
+</div>
+<div class="actions"><button class="primary" id="registrarMovimento">Registrar movimentação</button><button class="secondary" id="reiniciarEstoque">Restaurar estoque inicial</button></div>
+<div id="resultadoEstoque" aria-live="polite"></div>
+<h3>Estoque atual</h3><div id="tabelaEstoque"></div>
+<h3>Histórico de movimentações</h3><div id="historicoMovimentos"></div>
+</section>
+<section id="juros" class="panel">
+<h2>Calcular multa por atraso</h2>
+<p class="muted">O desafio informa multa de 2,5% ao dia. O cálculo abaixo usa juros simples sobre o valor original, apenas para dias após o vencimento.</p>
+<div class="grid">
+<div class="field"><label for="valorConta">Valor original (R$)</label><input id="valorConta" type="number" min="0" step="0.01" placeholder="Ex.: 250,00"></div>
+<div class="field"><label for="vencimento">Data de vencimento</label><input id="vencimento" type="date"></div>
+</div>
+<div class="actions"><button class="primary" id="calcularJuros">Calcular até hoje</button></div>
+<div id="resultadoJuros" aria-live="polite"></div>
+</section>
+</main>
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
