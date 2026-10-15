@@ -1,0 +1,157 @@
+:root {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    sans-serif;
+  color: #172033;
+  background: #f4f6fb;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 28px 16px;
+}
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+header {
+  margin-bottom: 24px;
+}
+h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+header p {
+  color: #5c667a;
+  margin: 0;
+}
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+button,
+.tab {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  font: inherit;
+  font-weight: 650;
+  cursor: pointer;
+}
+.tab {
+  background: #e4e9f3;
+  color: #27344b;
+}
+.tab.active,
+button.primary {
+  background: #2458d3;
+  color: white;
+}
+button.secondary {
+  background: #e7ebf3;
+  color: #243047;
+}
+button.danger {
+  background: #ffeded;
+  color: #a32222;
+}
+.panel {
+  display: none;
+  background: white;
+  border: 1px solid #e0e5ef;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 8px 30px #25385b0b;
+}
+.panel.active {
+  display: block;
+}
+.panel h2 {
+  margin-top: 0;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+label {
+  display: block;
+  font-size: 0.92rem;
+  font-weight: 650;
+  margin-bottom: 6px;
+}
+input,
+select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #cbd3e1;
+  border-radius: 8px;
+  font: inherit;
+  background: white;
+}
+.field {
+  margin-bottom: 14px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 10px;
+}
+.result {
+  margin-top: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  background: #eef4ff;
+  line-height: 1.6;
+}
+.error {
+  background: #fff0f0;
+  color: #9a2020;
+}
+.muted {
+  color: #657087;
+  font-size: 0.9rem;
+}
+.table-wrap {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 500px;
+}
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #e8ebf2;
+}
+th {
+  font-size: 0.85rem;
+  color: #5c667a;
+  background: #f8f9fc;
+}
+.stat {
+  font-size: 1.25rem;
+  font-weight: 750;
+}
+.small {
+  font-size: 0.85rem;
+  color: #657087;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 18px 10px;
+  }
+  .panel {
+    padding: 16px;
+  }
+}
